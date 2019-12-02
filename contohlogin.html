@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Login</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script>
+	function authuser(){
+		var sukses = false;
+
+			var users = ['Dila', 'Putri', 'Hilda', 'Ira'];
+			var passwords = ['bkm2019', 'programer', '1234567', 'bkm1234'];
+
+			var usernm = document.getElementById("username").value;
+			var passwd = document.getElementById("password").value;
+
+			if ((usernm == null || usernm =='') || (passwd == null || passwd == '')){
+			alert("tidak boleh kosong");
+			return;
+			}else{
+			for ( var i = 0; i < users.length; i++){
+
+			if (users[i] == usernm && passwords[i] == passwd){
+			document.location.href = "TugasFormulir.htm";
+			sukses = true;
+			break;
+				}
+			}
+			if (!sukses){
+			alert("Gagal Login");
+			}
+		}
+	}
+</script>
+<body background="latar.jpg">
+<div class="kotak_login">
+<center><img src="oriflame.png" alt="imglog" class="imglog">
+   <p class="tulisan_login"><b>Silahkan Login</b></p></center>
+
+   <form>
+    <label><b>Username</b></label>
+    <input type="text" name="username" id="username" class="form_login" placeholder="Username" required="Username atau email ..""><br><br>
+
+    <label><b>Password</b></label>
+    <input type="password" name="password" id="password" class="form_login" placeholder="Password" required="Password .."><br><br>
+<!--
+    <button type="button" onclick="authuser()"></button> -->
+    <button type="button" onclick="authuser()" class="tombol_login" value="LOGIN">Login</button>
+   </form>
+</div>
+</body>
+</html>
+

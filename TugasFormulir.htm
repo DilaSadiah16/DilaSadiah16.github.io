@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script>
+       function getIncome(jenis){
+         var output = "";
+         var sumber = document.getElementsByName("sumber");
+
+         var z;
+         var i;
+         var arr_nilai;
+         for (z=0; z<sumber.length; z++){
+            var ByName = sumber[z].value;
+
+            //kerja
+            //=====================================
+            if (sumber[z].type == "radio" && sumber[z].checked && ByName=="penghasilan"){
+               arr_nilai = document.getElementsByName(ByName);
+               i=0;
+               for (i=0; i<arr_nilai.length; i++){
+                  //-------------------------
+                  if (arr_nilai[i].type == "radio"){
+                     if (arr_nilai[i].checked){
+                        output=output+
+                        "radio"+sumber[z].value+"="+arr_nilai[i].value+"<br>"
+                     }
+                  }
+                  //-------------------------------------
+                  if (arr_nilai[i].type == "text") {
+                     if (arr_nilai[i].value!="") {
+                         output=output+
+                        "text"+sumber[z].value+"="+arr_nilai[i].value+"<br>"
+                     }
+                  }
+               }
+            }
+            //usaha
+            //===============================================
+            if (sumber[z].type == "radio" && sumber[z].checked && ByName=="kegiatan"){
+               arr_nilai = document.getElementsByName(ByName);
+               i=0;
+               for (i=0; i<arr_nilai.length; i++) {
+                  //-----------------------------------------
+                  if (arr_nilai[i].type == "radio") {
+                     if (arr_nilai[i].checked){
+                        output=output+
+                        "radio"+sumber[z].value+"="+arr_nilai[i].value+"<br>"
+                     }
+                  }
+                  //-------------------------------
+                  if (arr_nilai[i].type == "text") {
+                     if (arr_nilai[i].value!="") {
+                        output=output+
+                        "text"+sumber[z].value+"="+arr_nilai[i].value+"<br>"
+                     }
+                  }
+
+               }
+            }
+           if (sumber[z].type == "radio" && sumber[z].checked && ByName=="Lainnya"){
+               arr_nilai = document.getElementsByName(ByName);
+               i=0;
+               for (i=0; i<arr_nilai.length; i++) {
+                  //-----------------------------------------
+                  if (arr_nilai[i].type == "radio") {
+                     if (arr_nilai[i].checked){
+                        output=output+
+                        "radio"+sumber[z].value+"="+arr_nilai[i].value+"<br>"
+                     }
+                  }
+                  //-------------------------------
+                  if (arr_nilai[i].type == "textarea") {
+                     if (arr_nilai[i].value!="") {
+                        output=output+
+                        "textarea"+sumber[z].value+"="+arr_nilai[i].value+"<br>"
+                     }
+                  }
+
+               }
+            }
+         }
+         document.write(output);
+       }
+    </script>
+</head>
+<body>
+	<table border="1" width="100%">
+	<tr>
+		<td colspan="6" align="center"><b>KEMENTRIAN KEUANGAN REPUBLIK INDONESIA</b>
+		<p align="center"><b>DIREKTORAT JENDRAL PAJAK</b></p></td>
+	</tr>
+	<tr>
+		<td colspan="6" align="center"><h2>FORMULIR PENDAFTARAN WAJIB PAJAK ORANG PRIBADI</h2></td>
+	</tr>
+   <tr>
+      <td>
+	<table width="100%">
+		<tr>
+		<td colspan="6" align="center">SEMUA INFORMASI HARAP DIISI DENGAN HURUF KAPITAL/CETAK.Isi atau beri tanda x pada kotak jawaban yang sesuai</td>
+	</tr>
+	<tr>
+		<td><b>Jenis Pendaftaran :</b><input type="radio" id="jenis1" name="jenis " value="Pemohon Wajib Pajak">Pemohon Wajib Pajak
+			<input type="radio" id="jenis2" name="jenis " value="Pendaftaran Secara Jabatan">Pendaftaran Secara Jabatan</td>
+   </tr>
+   <tr>
+   	<td colspan="6" align="right"><b>NOMOR LHV/LHP</b><input type="text" id="nomor" name="nomor" size="70"></td></td>
+   </tr>
+   <tr>
+   	<td colspan="6"><b>Kategori:</b></td>
+   </tr>
+   <tr>
+   	<td colspan="6"></td>
+   </tr>
+   <tr>
+   	<td colspan="6">1.<input type="radio" id="Kategori1" name="Kategori" value="Orang Pribadi">Orang Pribadi</td>
+   </tr>
+   	<tr>
+   	<td>2.<input type="radio" id="Kategori2" name="Kategori" value="Wanita yang telah hidup terpisah berdasarkanputusan hukum">Wanita yang telah hidup terpisah berdasarkan putusan hukum</td>
+   </tr>
+	<tr>
+		<td>3.<input type="radio" id="Kategori3" name="Kategori" value="Istri dengan perjanjian pemisahan harta dan penghasilan (PH)">Istri dengan perjanjian pemisahan harta dan penghasilan (PH)</td>
+	</tr>
+	<tr>
+		<td>4.<input type="radio" id="Kategori4" name="Kategori" value="Istri memilih menjalankan hak dan kewajiban perpajakan terpisah (MT)">Istri memilih menjalankan hak dan kewajiban perpajakan terpisah (MT)</td>
+	</tr>
+	<tr>
+		<td>5.<input type="radio" id="Kategori5" name="Kategori" value="Warisan yang belum terbagi sebagai satu kesatuan menggantikan yang berhak (WHT)">Warisan yang belum terbagi sebagai satu kesatuan menggantikan yang berhak (WHT)</td>
+   </td>
+	</tr>
+</table>
+
+<br>
+
+	<table width="100%">
+	 <tr>
+	 	<td colspan="4" width="50%"><b>Status Pusat/Cabang</b></td>
+   	<td style="text-align: justify;"><b>NPWP/Induk Pusat</b></td>
+   </tr>
+   <tr>
+   		<td colspan="3"><input type="radio" id="Status1" name="Status" value="Pusat">Pusat
+   			<input type="radio" id="Status2" name="Status" value="Cabang">Cabang
+			<input type="radio" id="Status3" name="Status" value="OPIT">OPIT</td>
+   		<td colspan="6" align="left"><input type="text" id="nomor" name="nomor" size="51"></td>
+
+   </tr>
+  </table>
+
+  <br>
+ 
+<table width="100%">
+   <tr>
+   	<td colspan="6"><b>A.IDENTITAS WAJIB PAJAK</b></td>
+   </tr>
+   <tr>
+   	<td>1.Nama Wajib Pajak</td>
+   	<td colspan="5" align="right"><input type="text" id="Nama" name="Nama" size="178"></td>
+   </tr>
+   <td>Gelar Depan</td>
+   <td colspan="2" align="left"><input type="type" id="Gelar" name="Gelar" size="50"></td>
+   <td  align="right">Gelar Belakang <input type="type" id="Gelar" name="Gelar" size="87"></td>
+   <tr>
+      <td>2.Tempat/Tanggal Lahir(tgl-bln-thn)</td>
+      <td colspan="5" align="left"><input type="text" id="Nama" name="Nama" size="63">/<input type="text" id="tgl" name="tgl" size="10">-<input type="text" id="bln" name="bln" size="10">-<input type="text" id="thn" name="thn" size="10"></td>
+   </tr>
+   <tr>
+      <td width="20%">3.Status Perkawinan</td>
+      <td><input type="radio" id="Perkawinan" name="Perkawinan" value="1.Kawin">1.Kawin<input type="radio" id="Perkawinan" name="Perkawinan" value="2.Tidak Kawin">2.Tidak Kawin</td>
+   </tr>
+   <tr>
+      <td>4.Kebangsaan</td>
+      <td colspan="2"><input type="radio" id="Kebangsaan" name="Kebangsaan" value="Indonesia">Indonesia</td>
+      <td colspan="3" align="right">NIK<input type="text" id="NIK" name="NIK" size="98"></td>
+   </tr>
+   <tr>
+      <td></td>
+      <td colspan="2"><input type="radio" id="Kebangsaan" name="Kebangsaan" value="Asing">Asing</td>
+      <td colspan="3" align="right">Negara Asal<input type="text" id="Negara Asal" name="Negara Asal" size="91"></td>
+   </tr>
+   <tr>
+      <td colspan="6" align="right">No Paspor<input type="text" id="Negara Asal" name="Negara Asal" size="93"></td>
+   </tr>
+	</table>
+
+   <table width="100%">
+      <tr>
+         <td>5.Nomor Telepon Handphone</td>
+         <td align="right"><input type="text" id="Nomor Handphone" name="Nomor Handphone" size="178"></td>
+      </tr>
+      <tr>
+         <td>6.Email</td>
+          <td align="right"><input type="text" id="Nomor Handphone" name="Nomor Handphone" size="178"></td>
+      </tr>
+   </table>
+
+   <br>
+   <br>
+
+   <table width="100%">
+      <tr>
+         <td colspan="6"><b>B.SUMBER PENGHASILAN</b></td>
+      </tr>
+      <tr>
+         <td><input type="radio" id="Sumber" name="sumber" value="penghasilan">Penghasilan dalam hubungan kerja</td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="1.PNS">1.PNS</td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="2.TNI">2.TNI</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="3.Pensiunan">3.Pensiunan</td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="4.Pegawai Swasta">4.Pegawai Swasta</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="5.Pegawai BUMN/BUMD">5.Pegawai BUMN/BUMD</td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="6.Pegawai Badan Publik">6.Pegawai Badan Publik</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="7.Pejabat Negara Daerah">7.Pejabat Negara Daerah</td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="8.Pekerja pada pemberi kerja uang tidak termasuk pada subjek pajak">8.Pekerja pada pemberi kerja uang tidak termasuk pada subjek pajak</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><input type="radio" id="penghasilan" name="penghasilan" value="9.Pegawai Lainnya">9.Pegawai Lainnya</td>
+         <td>Uraian<input type="text" id="penghasilan" name="penghasilan" size="20"></td>
+      </tr>
+  
+      <tr>
+         <td><input type="radio" id="Sumber" name="sumber" value="kegiatan">Kegiatan Usaha</td>
+         <td><input type="text" id="Sumber" name="kegiatan" size="90"></td>
+      </tr>
+      <tr>
+         <td>&nbsp&nbsp&nbsp&nbspMerk Dagang/Usaha</td>
+         <td><input type="text" id="Kegiatan" name="kegiatan" size="90"></td>
+         
+      </tr>
+      <tr>
+         <td>&nbsp&nbsp&nbsp&nbspMemiliki Karyawan</td>
+         <td><input type="radio" id="Karyawan" name="kegiatan" value="Ya">Ya<input type="radio" id="Karyawan" name="kegiatan" value="Tidak">Tidak</td>
+      </tr>
+      <tr>
+         <td>&nbsp&nbsp&nbsp&nbspMetode Pembukuan/Pencatatan</td>
+         <td><input type="radio" id="Metode" name="kegiatan" value="Pembukuan">Pembukuan<input type="radio" id="Metode" name="kegiatan" value="Pencatatan">Pencatatan</td>
+
+      </tr>
+      <tr>
+         <td valign="top"><input type="radio" id="Sumber" name="sumber" value="Lainnya">Lainnya</td>
+       <td align="right" colspan="4"><textarea name="Lainnya" rows="7" cols="143"></textarea></td>
+      </tr>
+   </table>
+</td>
+</tr>
+</table>
+<button type="button" onclick="getIncome()">Tes Ambil Data</button>
+
+</body>
+</html>
